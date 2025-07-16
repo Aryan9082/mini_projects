@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover:enabled {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>INTERNSHIP APPLICATION FORM</h2>
+    <form action="#" method="post">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required maxlength="100">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit number">
+
+        <label for="semester">Current Semester</label>
+        <select id="semester" name="semester" required>
+            <option value="">--Select Semester--</option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+            <option value="5">5th</option>
+            <option value="6">6th</option>
+            <option value="7">7th</option>
+            <option value="8">8th</option>
+        </select>
+
+        <label for="branch">Branch</label>
+        <select id="branch" name="branch" required>
+            <option value="">--Select Branch--</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="AIML">AIML</option>
+            <option value="AIDS">AIDS</option>
+            <option value="EEE">EEE</option>
+        </select>
+
+        <label for="interest">Area of Interest</label>
+        <input type="text" id="interest" name="interest" placeholder="e.g. Web Development, Data Science, AI, IoT" required>
+
+        <label for="message">Why do you want this internship?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Explain briefly..." required maxlength="500"></textarea>
+
+        <button type="submit" id="submitBtn">Submit Application</button>
+    </form>
+
+    <script>
+        const form = document.querySelector("form");
+        const submitBtn = document.getElementById("submitBtn");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevents page refresh
+            submitBtn.textContent = "Submitted";
+            submitBtn.disabled = true; // Disable button to avoid double submission
+        });
+    </script>
+</body>
+</html>
